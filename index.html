@@ -1,0 +1,99 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>Medical Advances of the Civil War</title>
+        <style>
+        	body {
+            	position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                font-family: serif;
+                font-size: 16px;
+            }
+            #header {
+            	position: absolute;
+                font-size: 30px;
+            	width: calc(100% - 80px);
+                height: 100px;
+                left: 40px;
+                top: 40px;
+            }
+            #content {
+            	position: absolute;
+            	width: calc(100% - 260px);
+                height: calc(100% - 200px);
+                left: 200px;
+                top: 140px;
+                border: 1px solid black;
+                border-radius: 8px;
+                padding: 10px;
+                overflow-y: scroll;
+                background-color: #fff3c2;
+            }
+            #navbar {
+            	position: absolute;
+                width: 150px;
+                left: 40px;
+                top: 140px;
+                height: calc(100% - 180px);
+                border: 1px solid black;
+                border-radius: 8px;
+                background-color: #fff3c2;
+            }
+            .navlink {
+            	position: relative;
+                width: calc(100% - 14px);
+            	padding: 7px;
+                border-bottom: 1px solid black;
+            }
+            .title {
+            	font-size: 24px;
+                font-weight: bold;
+            }
+            .content {
+            	position: relative;
+                width: 100%;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+	<body>
+    	<div id="header">Medical Advances of the Civil War</div>
+    	<div id="navbar">
+        	<div class="navlink" id="Home" onclick="loadArticle('Home');">Home</div>
+            <div class="navlink" id="Before the War" onclick="loadArticle('Before the War');">Organization, Hospitals, and Triage</div>
+            <div class="navlink" id="Amputations" onclick="loadArticle('Amputations');">Amputations and Anesthesia</div>
+        </div>
+		<div id="content">
+        </div>
+        <script>
+        	const articles = {
+            	Home: `<div class="title">Home</div>
+           <div class="content">&nbsp;The Civil War is the deadliest war, to date, in the history of the United States. It makes sense that this era would also contain a large number of medical advancements, to cope with the increasing amount and severity of injuries.<br><br><img style="display: block; position: relative; left: 50%; transform: translateX(-50%); width: 100%; max-width: 500px; height: auto;" src="https://www.battlefields.org/sites/default/files/styles/wysiwyg_original/public/Military%20Losses%20in%20American%20Wars.jpg?itok=j7TJgIwM"><br>&nbsp;Click through the links on the left to learn more about the medical advances that occurred during the Civil War.</div>`,
+           		"Before the War": `<div class="title">Organization, Hospitals, and Triage</div>
+           <div class="content">&nbsp;Before the Civil War, military medicine (and medicine in general) was much less effective and safe. It was much more unsanitary, as the injured or sick were often crammed close together.<br>&nbsp;By August of 1862, things were becoming more organized. There were three types of hospitals established: small field dressing stations (situated on the battlefield), field hospitals (located just beyond the battlefield), and general hospitals (located in cities). Along with this, a system of triage was devised. It went “light”, “beyond hope”, and surgical cases. Surgical cases were done first, and then slight. Beyond hope patients were simply given painkillers until they died.<br>&nbsp;These organization changes made hospitals much less crowded, leading to much better sanitation.</div>`,
+           	Amputations: `<div class="title">Amputations and Anesthesia</div>
+           <div class="content">&nbsp;75% of surgeries performed during the Civil War were amputations; there were around 60,000 amputations performed. Contrary to popular belief, anesthesia was used heavily during this time. 95% of surgeries were performed under anesthesia of some kind. The remaining 5% were either because the patient was already unconscious or because of supply issues.<br>&nbsp;Chloroform was the most widely used anesthetic at the time. Chloroform was administered by putting it in a sponge, and holding the sponge to a cone. The large end of the cone was placed against the patient's mouth. It took around nine minutes for the chloroform to be fully administered.<br><br><img style="display: block; position: relative; left: 50%; transform: translateX(-50%); width: 100%; max-width: 500px; height: auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisiLRNnoL5jbRZpHBPkHFBl1FCdPk0WhPoMp3vM9XmpOweGQeC48Hl7vbNfXkjbcG5GCg6KJQTiAOKkfITgzTM2GMttWOQXZ1HTtEuhdLogXubvRN6XVfmUwbdvEMZYkRWQs-wXc-r/s1600/Amputees.jpg"><br>&nbsp;The reason for most amputations was a simple one: infection. Even though it wasn’t fully understood, doctors knew that wounds could become infected unless they were treated or removed. In most cases, removal was the easiest choice, especially for larger injuries. Surprisingly, only about 25% of amputees died. Due to their apparent eagerness to perform amputations, surgeons were given the nicknames “sawbones” and “butchers.” </div>`
+            };
+        	function loadArticle(article) {
+           		document.getElementById("content").innerHTML = articles[article];
+                for (const element of document.getElementsByClassName("navlink")) {
+                	if (element.id == article) {
+                    	element.style = "font-weight: bold;";
+                    }
+                    else {
+                    	element.style = "";
+                    }
+                }
+            }
+            loadArticle("Home");
+        </script>
+	</body>
+</html>
